@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нукта</title>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <!-- CSS Стили -->
+    <link rel="stylesheet" href="../styles/css/life_isurance.css">
+    <!-- Google Fonts Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="background"></div>
+            <div class="content">
+                <div class="left">
+                    <div class="upper">
+                        <h2>Оставьте свою заявку</h2>
+                        <h1>Страхование жизни</h1>
+                    </div>
+                    <div class="lower">
+                        <div class="contact">
+                            <i class="bx bx-map bx-md"></i>
+                            <div>
+                                <h3>Контакты</h3>
+                                <h4>ул. Панферова, д. 4</h4>
+                                <h4>8 (495) 150 01 13</h4>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <i class="bx bx-envelope bx-md"></i>
+                            <div>
+                                <h3>Электронная почта</h3>
+                                <h4>info@yourdomain.com</h4>
+                                <h4>contact@yourdomain.com</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="form_div">
+                        <h1>Создание заявки</h1>
+                        <form action="post">
+                            <div class="module_field">
+                                <p>Полное имя*</p>
+                                <div class="field">
+                                    <input type="text" name="" placeholder="ФИО">
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="module_field">
+                                <p>Email*</p>
+                                <div class="field">
+                                    <input type="text" name="" placeholder="example@yourmail.com">
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="module_field">
+                                <p>Телефон*</p>
+                                <div class="field">
+                                    <input type="text" name="" placeholder="+7 777 333 77 33">
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="module_field">
+                                <p>Дополнительная информация*</p>
+                                <div class="field">
+                                    <input type="text" name="" placeholder="Введите текст">
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="module_field">
+                                <div class="button">
+                                    <input type="submit" placeholder="Отправить">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Всплывающее окно успешное -->
+            <div id="openModal" class="modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title">Заявка создана</h3>
+                    </div>
+                    <div class="modal-body">    
+                      <p>Данные сохранены</p>
+                      <a href="#close" title="Close" class="close">Готово</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Всплывающее окно неудачное -->
+              <div id="openModal" class="modalf">
+                <div class="modal-dialogf">
+                  <div class="modal-contentf">
+                    <div class="modal-headerf">
+                        <div class="dots">
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                        </div>
+                        <div class="dots" id="dots">
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>.</p>
+                        </div>
+                      <h3 class="modal-titlef">Ошибка</h3>
+                    </div>
+                    <div class="modal-bodyf">    
+                      <p>Данные внесены неверно</p>
+                      <a href="#close" title="Close" class="closef">Повторная попытка</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </main>
+</body>
+</html>

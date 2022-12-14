@@ -1,0 +1,397 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 70%;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.background {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  background: linear-gradient(to right, rgba(33, 86, 179, 0.6980392157) 70%, white);
+  z-index: -1;
+}
+
+.content {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin: 7% auto;
+  padding: 1em 0;
+}
+
+.left {
+  margin-right: 4em;
+  width: 50%;
+}
+.left .upper h2 {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.left .upper h1 {
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+}
+.left .lower {
+  width: 100%;
+  margin-top: 12em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.left .lower .contact {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-right: 2em;
+}
+.left .lower .contact i {
+  color: rgba(33, 86, 179, 0.6980392157);
+  font-weight: 100;
+  margin-right: 15px;
+}
+.left .lower .contact h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.left .lower .contact h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #637381;
+}
+
+.right {
+  width: 470px;
+  height: 612px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.05);
+}
+.right select:focus, .right input:focus {
+  outline: none;
+}
+.right .form_div {
+  margin: 60px;
+}
+.right .form_div h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+.right form .module_field {
+  margin-top: 2em;
+}
+.right form .module_field .button {
+  display: flex;
+  justify-content: flex-start;
+}
+.right form .module_field .button input {
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: hidden;
+  background-color: #3056D3;
+  color: white;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+.right form .module_field .button input:hover {
+  transition: background-color 0.5s;
+  background-color: #2444ac;
+}
+.right form p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #637381;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+.right form .field {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding: 5px;
+}
+.right form .field #empty_field {
+  margin: 0 10px;
+}
+.right form .field input {
+  border: hidden;
+  width: 100%;
+  font-size: 15px;
+  color: #637381;
+  font-weight: 400;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #292b2c;
+  background-color: #fff;
+}
+
+/* свойства модального окна по умолчанию */
+.modal {
+  position: fixed; /* фиксированное положение */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(75, 112, 177, 0.6392156863); /* цвет фона */
+  z-index: 1050;
+  opacity: 0; /* по умолчанию модальное окно прозрачно */
+  transition: opacity 200ms ease-in; /* анимация перехода */
+  pointer-events: none; /* элемент невидим для событий мыши */
+  margin: 0;
+  padding: 0;
+}
+
+/* при отображении модального окно */
+.modal:target {
+  opacity: 1; /* делаем окно видимым */
+  pointer-events: auto; /* элемент видим для событий мыши */
+  overflow-y: hidden; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 30px auto; /* для отображения модального окна по центру */
+  }
+}
+/* свойства для блока, содержащего контент модального окна */
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  margin: 20em auto;
+}
+
+/* свойства для заголовка модального окна */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* свойства для кнопки "Закрыть" */
+.close {
+  float: right;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  overflow-y: hidden;
+  padding: 10px 20px;
+  background-color: #3056D3;
+  border-radius: 5px;
+}
+
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.close:focus, .close:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  flex: 1 1 auto;
+  padding: 15px;
+  overflow: auto;
+  padding-top: 0;
+}
+.modal-body p {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 40px;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #292b2c;
+  background-color: #fff;
+}
+
+/* свойства модального окна по умолчанию */
+.modalf {
+  position: fixed; /* фиксированное положение */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(75, 112, 177, 0.6392156863); /* цвет фона */
+  z-index: 1050;
+  opacity: 0; /* по умолчанию модальное окно прозрачно */
+  transition: opacity 200ms ease-in; /* анимация перехода */
+  pointer-events: none; /* элемент невидим для событий мыши */
+  margin: 0;
+  padding: 0;
+}
+
+/* при отображении модального окно */
+.modalf:target {
+  opacity: 1; /* делаем окно видимым */
+  pointer-events: auto; /* элемент видим для событий мыши */
+  overflow-y: hidden; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+
+/* ширина модального окна и его отступы от экрана */
+.modal-dialogf {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+@media (min-width: 576px) {
+  .modal-dialogf {
+    max-width: 500px;
+    margin: 30px auto; /* для отображения модального окна по центру */
+  }
+}
+/* свойства для блока, содержащего контент модального окна */
+.modal-contentf {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #3056D3;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  outline: 0;
+  margin: 10em auto;
+  padding: 6em 0;
+}
+
+/* свойства для заголовка модального окна */
+.modal-headerf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  grid-template-columns: repeat(4, 10px);
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+}
+.dots p {
+  color: white;
+  font-size: 16px;
+}
+.dots#dots {
+  top: 360px;
+  left: 420px;
+  z-index: 99999;
+}
+
+.modal-titlef {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 100px;
+  font-weight: 700;
+  color: white;
+}
+
+/* свойства для кнопки "Закрыть" */
+.closef {
+  float: right;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #3056D3;
+  text-decoration: none;
+  overflow-y: hidden;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.closef:focus, .closef:hover {
+  color: #3056D3;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-bodyf {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  flex: 1 1 auto;
+  padding: 15px;
+  overflow: auto;
+  padding-top: 0;
+}
+.modal-bodyf p {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  padding-bottom: 40px;
+}
