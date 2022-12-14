@@ -1,0 +1,82 @@
+@import "../common_scss/colors";
+
+.left{
+    margin-right: 7em;
+    // border: solid 1px red;
+    width: 40%;
+
+
+    .upper{
+        h2{
+            color: $primary;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+            
+        h1{
+            color: black;
+            font-size: 35px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h4{
+            font-size: 16px;
+            font-weight: 400;
+            color: #637381;
+        }
+    }
+
+    .lower{
+        // border: solid 1px red;
+        width: auto;
+        padding: 2em 0;
+        margin-top: 2em;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        .contact{
+            // border: solid 1px rgb(48, 12, 255);
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 20px 0;
+            padding-right: 2em;
+
+            .tmp{
+                margin-right: 15px;
+                i{
+                    color: $primary;
+                    font-weight: 100;
+                    margin-right: 15px;
+                    margin: 0 auto;
+                    padding: 10px;
+                    background-color: #3056D30D;
+                }
+            }
+
+            
+
+            div{
+
+                h3{
+                    font-size: 17px;
+                    font-weight: 600;
+                    margin-bottom: 0px;
+                }
+    
+                h4{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #637381;
+                }
+            }
+
+            
+        }
+    }
+}
