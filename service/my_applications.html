@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои заявки</title>
+    <link rel="stylesheet" href="../styles/css/my_applications.css">
+</head>
+<body>
+
+    <main class="applications__container">
+        <!-- Левый блок мои заявки -->
+        <div class="applications__left">
+            <h1>Мои заявки</h1>
+            <div class="applications__get">
+                <div class="applications__img">
+                    <img src="../assets/my_applications_1.jpg" alt="">
+                </div>
+                <div class="applications__get__inf">
+                    <h3>Заявка на заключение <br> договора ДМС</h3>
+                    <div class="applications__text">Обработано</div>
+                    <div class="button">
+                        <a href="#">Далее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Правый блок мои заявки -->
+        <div class="applications__right">
+            <div class="applications__message">
+                После успешной обработки заявки Вы можете заключить договор ДМС
+            </div>
+        </div>
+    </main>
+        <a href="#openForm">Заключить договор</a>
+        <a href="#openModal">Удачный ввод</a>
+        <a href="#openModalf">Неудачный ввод</a>
+            
+    <!-- Всплывающее окно успешное -->
+    <div id="openForm" class="modalz">
+        <div class="modalz-dialog">
+          <div class="modalz-content">
+            <div class="modalz-body">    
+                <div class="form_div">
+                    <h1>Заключить договор</h1>
+                    <form action="post">
+                        <div class="module_field">
+                            <p>Полное имя*</p>
+                            <div class="field">
+                                <input type="text" name="" placeholder="ФИО">
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="module_field">
+                            <p>Email*</p>
+                            <div class="field">
+                                <input type="text" name="" placeholder="example@yourmail.com">
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="module_field">
+                            <p>Телефон*</p>
+                            <div class="field">
+                                <input type="text" name="" placeholder="+7 777 333 77 33">
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="module_field">
+                            <p>Данные пасспорта*</p>
+                            <div class="field">
+                                <input type="text" name="" placeholder="4444 444444">
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="module_field">
+                            <p>СНИЛС*</p>
+                            <div class="field">
+                                <input type="text" name="" placeholder="Введите текст">
+                            </div>
+                            <hr>
+                        </div>
+                        <a href="#close" title="Close" class="close">Отправить</a>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Всплывающее окно успешное -->
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Заявка создана</h3>
+            </div>
+            <div class="modal-body">    
+              <p>Данные сохранены</p>
+              <a href="#close" title="Close" class="close">Готово</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Всплывающее окно неудачное -->
+      <div id="openModalf" class="modalf">
+        <div class="modal-dialogf">
+          <div class="modal-contentf">
+            <div class="modal-headerf">
+                <div class="dots">
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                </div>
+                <div class="dots" id="dots">
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>.</p>
+                </div>
+              <h3 class="modal-titlef">Ошибка</h3>
+            </div>
+            <div class="modal-bodyf">    
+              <p>Данные внесены неверно</p>
+              <a href="#close" title="Close" class="closef">Повторная попытка</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+</body>
+</html>
